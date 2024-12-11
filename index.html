@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title> Factorial Application By Tejas</title>
+        <style>
+            *{
+                font-size: 40px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            body{
+                background-color: beige;
+            }
+            #output{
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                line-height: 1.5;
+           }
+           .btn{
+            color:chocolate;
+           }
+
+           .btn:hover{
+            background-color: cornflowerblue;
+           }
+
+        </style>
+    </head>
+
+    <body>
+        <center>
+            <h1>FACTORIAL APP</h1>
+            <br/>
+        <form onsubmit="fact()">
+            <input type="number" id="num" placeholder="Enter positive integer"/>
+            <br/><br/>
+            <input type="submit" value="M1" class="btn"/>
+            <input type="submit" value="M2" class="btn"/>
+            <input type="submit" value="M3" class="btn"/>
+    </form>
+    <div id="output"></div>
+    <script>
+        function fact(){
+            event.preventDefault();
+            let num = document.getElementById("num")
+            let msg = document.getElementById("output")
+
+            if(num.value === ""){
+                alert("number is empty")
+                rating.focus();
+                msg.innerHTML = ""
+                return;
+            }
+            let r = parseInt(num.value)
+            if(r < 0){
+                alert("integer shud be  min 0")
+                r.focus();
+                msg.innerHTML = ""
+                return;
+            }
+
+            let acttion = document.activeElement.value;
+            let ans = ""
+            
+            if(acttion == "M1"){
+                let i = 1n; f = 1n;
+                while(i<=BigInt(r)){
+                    f = f*i;
+                    i++;
+                }
+                ans = "M1 = Factorial is " +f.toString();
+                document.getElementById("output").innerText = ans.toString();
+            }
+            else if(acttion == "M2"){
+                let i = 1n; f = 1n;
+                do{
+                    
+                    f = f*i;
+                    i++;
+                } while(i<=BigInt(r));
+
+                ans = "M2 = Factorial is " +f.toString();
+                document.getElementById("output").innerText = ans.toString();
+            }
+
+            else if (acttion == "M3"){
+                f = 1n;
+                for (let i = 1n; i <= BigInt(r); i++) {
+                   f = f * i;
+
+                    
+                }
+                ans = "M3 = Factorial is " +f.toString();
+                document.getElementById("output").innerText = ans.toString();
+            }
+           
+
+           
+            
+                
+
+        }
+        
+
+    </script>
+    </center>
+    </body>
+</html>
